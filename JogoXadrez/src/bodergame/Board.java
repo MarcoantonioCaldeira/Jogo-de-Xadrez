@@ -1,12 +1,12 @@
 package bodergame;
 
-public class Bord {
+public class Board {
 
     private int rows;
     private int columns;
     private Piece[][] pieces;
 
-    public Bord(int rows, int columnms){
+    public Board(int rows, int columnms){
         this.setRows(rows);
         this.setColumns(getColumns());
         pieces = new Piece[rows][columnms];
@@ -26,5 +26,19 @@ public class Bord {
 
     public void setColumns(int columns) {
         this.columns = columns;
+    }
+
+    public Piece piece(int row, int column){
+        return pieces[row][column];
+    }
+
+    public Piece piece(Position position){
+        return pieces[position.getRow()][position.getColumn()];
+    }
+
+    public Position placePiece(Piece piece, Position position){
+        pieces[position.getRow()][position.getColumn()] = piece;
+        piece.position = position;
+        return position;
     }
 }

@@ -3,14 +3,14 @@ package bodergame;
 public class Piece {
 
     protected Position position;
-    private Bord bord;
+    private Board bord;
 
-    public Piece(Bord bord){
+    public Piece(Board bord){
         this.bord = bord;
         position = null;
     }
 
-    protected Bord getBord() {
+    protected Board getBord() {
         return bord;
     }
 
